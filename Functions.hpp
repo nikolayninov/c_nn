@@ -5,3 +5,4 @@
 #include "Functions/Cos.hpp"
 #include "Functions/Max.hpp"
 #include "Functions/Min.hpp"
+#include "Functions/Log.hpp"

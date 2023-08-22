@@ -21,8 +21,6 @@ public:
     void setFunc(func);
     void setStringifier(sfunc);
 
-    // Function exp(Function &);
-
     double call(double) const;
     double gradAt(double) const;
     std::string to_string() const;

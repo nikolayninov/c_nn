@@ -1,5 +1,4 @@
 #include "Pol.hpp"
-#include "Constant.hpp"
 
 Pol::Pol(double n) : Function()
 {
