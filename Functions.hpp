@@ -4,3 +4,4 @@
 #include "Functions/Sin.hpp"
 #include "Functions/Cos.hpp"
 #include "Functions/Max.hpp"
+#include "Functions/Min.hpp"
