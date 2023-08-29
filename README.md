@@ -16,6 +16,7 @@ Neural Networks library in C++
 In build:
 ```bash
 # ./{example_file_name}
+> cd example
 > ./main
 ```
 
