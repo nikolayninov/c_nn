@@ -17,12 +17,6 @@ public:
     Function(Function &&);
     ~Function();
 
-    void setGradient(func);
-    void setFunc(func);
-    void setStringifier(sfunc);
-
-    // Function exp(Function &);
-
     double call(double) const;
     double gradAt(double) const;
     std::string to_string() const;
@@ -36,14 +30,20 @@ public:
 
     friend std::ostream &operator<<(std::ostream &, const Function &);
 
+protected:
+    void setGradient(func);
+    func getGradient() const;
+
+    void setFunc(func);
+    func getFunc() const;
+
+    void setStringifier(sfunc);
+    sfunc getStringifier() const;
+
 private:
     func f;
     func grad;
     sfunc stringifier;
-
-    func getGradient() const;
-    func getFunc() const;
-    sfunc getStringifier() const;
 };
 
 #endif

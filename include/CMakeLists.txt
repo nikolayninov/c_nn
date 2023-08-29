@@ -1,0 +1,1 @@
+project(c_nn LANGUAGES CXX)

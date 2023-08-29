@@ -1,4 +1,4 @@
-#include "Constant.hpp"
+#include "c_nn/Functions/Constant.hpp"
 
 Constant::Constant(double x) : Function()
 {
