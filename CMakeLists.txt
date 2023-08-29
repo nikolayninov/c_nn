@@ -6,8 +6,8 @@ add_subdirectory(libs)
 add_subdirectory(include)
 add_subdirectory(src)
 
-option(BUILD_TESTS "" ON)
-option(BUILD_EXAMPLES "" ON)
+option(BUILD_TESTS "Build library tests" ON)
+option(BUILD_EXAMPLES "Build example executables" ON)
 
 
 if (BUILD_TESTS)
