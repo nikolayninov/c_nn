@@ -10,6 +10,8 @@ Neural Networks library in C++
 
 ``` 
 
+
+
 #### Run examples
 In build:
 ```bash
