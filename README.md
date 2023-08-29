@@ -12,14 +12,14 @@ Neural Networks library in C++
 
 #### Run examples
 In build:
-```
+```bash
 # ./{example_file_name}
 > ./main
 ```
 
 #### Run tests
 In build:
-```
+```bash
 > cd tests
 > ctest
 ```
