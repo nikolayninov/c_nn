@@ -1,22 +1,22 @@
-#include "Sin.hpp"
+#include "c_nn/Functions/Cos.hpp"
 
-Sin::Sin()
+Cos::Cos()
 {
     func res = [](double xx)
     {
-        return sin(xx);
+        return cos(xx);
     };
     func grad = [](double xx)
     {
-        return cos(xx);
+        return -sin(xx);
     };
     sfunc strng = []()
     {
-        return "sin(x)";
+        return "cos(x)";
     };
 
     this->setFunc(res);
     this->setGradient(grad);
     this->setStringifier(strng);
 }
-Sin::~Sin() {}
+Cos::~Cos() {}

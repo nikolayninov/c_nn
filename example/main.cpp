@@ -1,4 +1,4 @@
-#include "Functions.hpp"
+#include "c_nn/Functions.hpp"
 
 #include <iostream>
 

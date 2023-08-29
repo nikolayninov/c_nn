@@ -1,4 +1,4 @@
-#include "Pol.hpp"
+#include "c_nn/Functions/Pol.hpp"
 
 Pol::Pol(double n) : Function()
 {

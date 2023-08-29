@@ -1,4 +1,4 @@
-#include "Function.hpp"
+#include "c_nn/Functions/Function.hpp"
 #include <iostream>
 
 Function::Function()

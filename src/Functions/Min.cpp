@@ -1,13 +1,13 @@
-#include "Max.hpp"
+#include "c_nn/Functions/Min.hpp"
 
-Max::Max(const Function lhs, const Function rhs)
+Min::Min(const Function lhs, const Function rhs)
 {
     func res = [&](double xx)
     {
         double l_val = lhs.call(xx);
         double r_val = rhs.call(xx);
 
-        if (l_val > r_val)
+        if (l_val < r_val)
             return l_val;
         else
             return r_val;
@@ -16,14 +16,14 @@ Max::Max(const Function lhs, const Function rhs)
     {
         double l_val = lhs.call(xx);
         double r_val = rhs.call(xx);
-        if (l_val > r_val)
+        if (l_val < r_val)
             return lhs.gradAt(xx);
         else
             return rhs.gradAt(xx);
     };
     sfunc strng = [&]()
     {
-        return "Max(" + lhs.to_string() + ", " + rhs.to_string() + ")";
+        return "Min(" + lhs.to_string() + ", " + rhs.to_string() + ")";
     };
 
     this->setFunc(res);
@@ -31,6 +31,6 @@ Max::Max(const Function lhs, const Function rhs)
     this->setStringifier(strng);
 }
 
-Max::~Max()
+Min::~Min()
 {
 }

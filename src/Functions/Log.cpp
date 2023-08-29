@@ -1,4 +1,4 @@
-#include "Log.hpp"
+#include "c_nn/Functions/Log.hpp"
 
 Log::Log(double b) : Function()
 {
