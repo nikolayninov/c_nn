@@ -1,6 +1,8 @@
-#include "c_nn/Functions.hpp"
-
 #include <iostream>
+
+#include <Eigen/Dense>
+
+#include "c_nn/Functions.hpp"
 
 using namespace std;
 

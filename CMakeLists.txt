@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.16..3.24)
 project(c_nn
         LANGUAGES CXX)
 
-add_subdirectory(libs)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+add_subdirectory(third_party)
 add_subdirectory(include)
 add_subdirectory(src)
 
