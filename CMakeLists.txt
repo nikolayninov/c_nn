@@ -1,23 +1,39 @@
-cmake_minimum_required(VERSION 3.16..3.24)
-project(c_nn
-        LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.1)
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_subdirectory(third_party)
-add_subdirectory(include)
-add_subdirectory(src)
-
-option(BUILD_TESTS "Build library tests" ON)
-option(BUILD_EXAMPLES "Build example executables" ON)
-
-
-if (BUILD_TESTS)
-    message(STATUS "Building tests...")
-    add_subdirectory(tests)
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
 endif()
 
-if (BUILD_EXAMPLES)
-    message(STATUS "Building examples...")
-    add_subdirectory(example)
-endif()
+set(CMAKE_CXX_FLAGS "-O3")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+
+project(cnn)
+
+include_directories("${CMAKE_SOURCE_DIR}/cpp/include/cnn")
+include_directories("${CMAKE_SOURCE_DIR}/python")
+
+file (GLOB_RECURSE SOURCE_FILES "cpp/src/*.cpp")
+file (GLOB_RECURSE HEADER_FILES "cpp/include/*.hpp")
+file (GLOB PYTHON_FILES "python/*.cpp" "python/*.hpp")
+
+# Set up such that XCode organizes the files
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCE_FILES} ${HEADER_FILES} ${PYTHON_FILES} )
+set(PYBIND11_PYTHON_VERSION "3.9")
+
+include(pybind11.cmake)
+pybind11_add_module(cnn 
+	${SOURCE_FILES}
+	${HEADER_FILES}
+	${PYTHON_FILES}
+)
+
+target_link_libraries(cnn PUBLIC)
+
+install(TARGETS cnn
+  COMPONENT python
+  LIBRARY DESTINATION "${PYTHON_LIBRARY_DIR}"
+  )

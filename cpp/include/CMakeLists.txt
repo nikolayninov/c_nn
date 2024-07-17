@@ -1,0 +1,2 @@
+project(cnn LANGUAGES CXX)
+
